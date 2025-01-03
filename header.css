@@ -1,0 +1,129 @@
+header {
+    width: 100%;
+    padding: 28px 8%;
+    top: 0;
+    background-color: var(--White);
+    z-index: 14;
+    position: fixed;
+}
+
+#nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--GrayishBlue);
+    transition: 0.3s ease;
+}
+
+.nav-item {
+    position: relative; /* Necessary for ::after to position relative to each link */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px; /* Adjust to align directly under the text */
+    height: 3px; /* Thickness of the bar */
+    background: linear-gradient(90deg, rgba(49,211,92,1) 35%, rgba(0,212,255,1) 100%);
+    transform: scaleX(0); /* Start hidden */
+    transform-origin: left; /* Animation starts from the left */
+    transition: transform 0.3s ease; /* Smooth reveal effect */
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1); /* Fully reveal the bar on hover */
+}
+
+.nav-button {
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    width: 180px;
+    font-weight: 700;
+    color: var(--White);
+    cursor: pointer; 
+    background: linear-gradient(90deg, rgba(49,211,92,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.burger {
+    display: none;
+}
+
+.mobile-nav {
+    text-align: center;
+    background-color: var(--White);
+    width: 100%;
+    padding: 30px;
+    position: fixed; /* Change to fixed */
+    top: -400px; /* Adjust as needed */
+    left: 0px;
+    transform: translateX(-50%); /* Center the menu */
+    display: none; /* Keep as none initially */
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Start slightly above */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 2px;
+}
+
+.nav-button-mobile {
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    width: 180px;
+    font-weight: 700;
+    color: var(--White);
+    cursor: pointer; 
+    background: linear-gradient(90deg, rgba(49,211,92,1) 35%, rgba(0,212,255,1) 100%);
+    margin-top: 20px;
+}
+
+.mobile-nav-list { 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav-link {
+    color: var(--DarkBlue);
+}
+
+
+@media screen and (max-width: 780px) {
+
+    .mobile-nav.active {
+        display: block; /* Keep as block when active */
+        opacity: 1; /* Make visible */
+        transform: translateY(0); /* Move to original position */
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+}    
+
