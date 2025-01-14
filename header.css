@@ -30,7 +30,7 @@ header {
 }
 
 .nav-item {
-    position: relative; /* Necessary for ::after to position relative to each link */
+    position: relative; 
 }
 
 .nav-link::after {
@@ -38,16 +38,16 @@ header {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -30px; /* Adjust to align directly under the text */
-    height: 3px; /* Thickness of the bar */
+    bottom: -30px; 
+    height: 3px;
     background: linear-gradient(90deg, rgba(49,211,92,1) 35%, rgba(0,212,255,1) 100%);
-    transform: scaleX(0); /* Start hidden */
-    transform-origin: left; /* Animation starts from the left */
-    transition: transform 0.3s ease; /* Smooth reveal effect */
+    transform: scaleX(0); 
+    transform-origin: left; 
+    transition: transform 0.3s ease; 
 }
 
 .nav-link:hover::after {
-    transform: scaleX(1); /* Fully reveal the bar on hover */
+    transform: scaleX(1); 
 }
 
 .nav-button {
@@ -70,14 +70,14 @@ header {
     background-color: var(--White);
     width: 100%;
     padding: 30px;
-    position: fixed; /* Change to fixed */
-    top: -400px; /* Adjust as needed */
+    position: fixed; 
+    top: -400px; 
     left: 0px;
-    transform: translateX(-50%); /* Center the menu */
-    display: none; /* Keep as none initially */
-    opacity: 0; /* Start invisible */
-    transform: translateY(-20px); /* Start slightly above */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    transform: translateX(-50%);
+    display: none; 
+    opacity: 0; 
+    transform: translateY(-20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 2px;
 }
 
@@ -107,9 +107,9 @@ header {
 @media screen and (max-width: 780px) {
 
     .mobile-nav.active {
-        display: block; /* Keep as block when active */
-        opacity: 1; /* Make visible */
-        transform: translateY(0); /* Move to original position */
+        display: block; 
+        opacity: 1; 
+        transform: translateY(0); 
     }
 
     .burger {
