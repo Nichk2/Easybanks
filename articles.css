@@ -1,23 +1,24 @@
 .articles {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 10px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    padding: 20px; 
 }
 
-
 .article-card {
-    width: 290px;
-    height: 450px;
     background-color: var(--White);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column; 
+    height: auto; 
 }
 
 .img-card {
     border-radius: 15px 15px 0 0;
-    width: 290px;
-    height: 220px;
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
 }
 
 .articles-section-headline {
@@ -25,11 +26,12 @@
     color: var(--DarkBlue);
     font-size: 2rem;
     margin-bottom: 30px;
+    text-align: center; 
 }
 
 .card-content {
     padding: 15px;
-    margin-top: 10px;
+    flex-grow: 1; 
 }
 
 .card-writer {
@@ -49,27 +51,24 @@
     color: var(--GrayishBlue);
 }
 
-@media screen and (max-width: 780px) {
-
-    .article-card {
-        width: 450px;
-        margin-top: 30px;
+@media screen and (max-width: 768px) {
+    .articles {
+        grid-template-columns: 1fr; 
     }
 
     .img-card {
-        width: 450px;
-    }
-
-}
-
-@media screen and (max-width: 820px) {
-
-    .article-card {
-        margin-left: -80px;
+        height: 150px; 
     }
 
     .articles-section-headline {
-        margin-left: 30px;
+        font-size: 1.5rem; 
     }
 
+    .card-title {
+        font-size: 1rem; 
+    }
+
+    .card-paragraph {
+        font-size: 0.9rem; 
+    }
 }
